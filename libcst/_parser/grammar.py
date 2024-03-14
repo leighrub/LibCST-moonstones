@@ -3,8 +3,8 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 
-import re
 from functools import lru_cache
+import re
 from typing import FrozenSet, Iterator, Mapping, Optional, Tuple, Union
 
 from libcst._parser.conversions.expression import (
@@ -74,14 +74,18 @@ from libcst._parser.conversions.statement import (
     convert_asyncable_funcdef,
     convert_asyncable_stmt,
     convert_augassign,
+    # Spanish stmts
+    convert_aumenta_stmt,
     convert_break_stmt,
     convert_classdef,
     convert_compound_stmt,
     convert_continue_stmt,
+    convert_continúa_stmt,
     convert_decorated,
     convert_decorator,
     convert_decorators,
     convert_del_stmt,
+    convert_devuelve_stmt,
     convert_dotted_as_name,
     convert_dotted_as_names,
     convert_dotted_name,
@@ -106,6 +110,7 @@ from libcst._parser.conversions.statement import (
     convert_pass_stmt,
     convert_raise_stmt,
     convert_return_stmt,
+    convert_rompe_stmt,
     convert_simple_stmt_line,
     convert_simple_stmt_partial,
     convert_simple_stmt_suite,
@@ -133,9 +138,9 @@ from libcst._parser.conversions.terminals import (
     convert_OP,
     convert_STRING,
 )
-from libcst._parser.parso.pgen2.generator import generate_grammar, Grammar
+from libcst._parser.parso.pgen2.generator import Grammar, generate_grammar
 from libcst._parser.parso.python.token import PythonTokenTypes, TokenType
-from libcst._parser.parso.utils import parse_version_string, PythonVersionInfo
+from libcst._parser.parso.utils import PythonVersionInfo, parse_version_string
 from libcst._parser.production_decorator import get_productions
 from libcst._parser.types.config import AutoConfig
 from libcst._parser.types.conversions import NonterminalConversion, TerminalConversion
@@ -265,6 +270,11 @@ _NONTERMINAL_CONVERSIONS_SEQUENCE: Tuple[NonterminalConversion, ...] = (
     convert_comp_if,
     convert_yield_expr,
     convert_yield_arg,
+    # Spanish stmts
+    convert_aumenta_stmt,
+    convert_continúa_stmt,
+    convert_devuelve_stmt,
+    convert_rompe_stmt,
 )
 
 

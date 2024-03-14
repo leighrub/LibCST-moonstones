@@ -52,7 +52,7 @@ pub(crate) mod inflate_helpers;
 
 pub(crate) mod deflated {
     pub use super::expression::{
-        DeflatedArg as Arg, DeflatedAsynchronous as Asynchronous, DeflatedAttribute as Attribute,
+        DeflatedArg as Arg, DeflatedAttribute as Attribute,
         DeflatedAwait as Await, DeflatedBaseSlice as BaseSlice,
         DeflatedBinaryOperation as BinaryOperation, DeflatedBooleanOperation as BooleanOperation,
         DeflatedCall as Call, DeflatedCompFor as CompFor, DeflatedCompIf as CompIf,
@@ -62,8 +62,7 @@ pub(crate) mod deflated {
         DeflatedElement as Element, DeflatedEllipsis as Ellipsis, DeflatedExpression as Expression,
         DeflatedFloat as Float, DeflatedFormattedString as FormattedString,
         DeflatedFormattedStringContent as FormattedStringContent,
-        DeflatedFormattedStringExpression as FormattedStringExpression,
-        DeflatedFormattedStringText as FormattedStringText, DeflatedFrom as From,
+        DeflatedFormattedStringExpression as FormattedStringExpression, DeflatedFrom as From,
         DeflatedGeneratorExp as GeneratorExp, DeflatedIfExp as IfExp,
         DeflatedImaginary as Imaginary, DeflatedIndex as Index, DeflatedInteger as Integer,
         DeflatedLambda as Lambda, DeflatedLeftCurlyBrace as LeftCurlyBrace,
@@ -85,8 +84,7 @@ pub(crate) mod deflated {
     pub use super::op::{
         DeflatedAssignEqual as AssignEqual, DeflatedAugOp as AugOp, DeflatedBinaryOp as BinaryOp,
         DeflatedBitOr as BitOr, DeflatedBooleanOp as BooleanOp, DeflatedColon as Colon,
-        DeflatedComma as Comma, DeflatedCompOp as CompOp, DeflatedDot as Dot,
-        DeflatedImportStar as ImportStar, DeflatedSemicolon as Semicolon,
+        DeflatedComma as Comma, DeflatedCompOp as CompOp, DeflatedDot as Dot, DeflatedSemicolon as Semicolon,
         DeflatedUnaryOp as UnaryOp,
     };
     pub use super::statement::{

@@ -32,10 +32,10 @@ from libcst._nodes.expression import (
     BinaryOperation,
     BooleanOperation,
     Call,
-    Comparison,
-    ComparisonTarget,
     CompFor,
     CompIf,
+    Comparison,
+    ComparisonTarget,
     ConcatenatedString,
     Dict,
     DictComp,
@@ -61,9 +61,9 @@ from libcst._nodes.expression import (
     Name,
     NamedExpr,
     Param,
-    Parameters,
     ParamSlash,
     ParamStar,
+    Parameters,
     RightCurlyBrace,
     RightParen,
     RightSquareBracket,
@@ -200,6 +200,7 @@ from libcst._nodes.statement import (
     With,
     WithItem,
 )
+from libcst._nodes.statement_spanish import Aumenta, Continúa, Devuelve, Rompe
 from libcst._nodes.whitespace import (
     BaseParenthesizableWhitespace,
     Comment,
@@ -218,9 +219,9 @@ from libcst._removal_sentinel import RemovalSentinel, RemoveFromParent
 from libcst._visitors import CSTNodeT, CSTTransformer, CSTVisitor, CSTVisitorT
 
 try:
-    from libcst._version import version as LIBCST_VERSION
+  from libcst._version import version as LIBCST_VERSION
 except ImportError:
-    LIBCST_VERSION = "unknown"
+  LIBCST_VERSION = "unknown"
 from libcst.helpers import (  # from libcst import ensure_type is deprecated, will be removed in 0.4.0
     ensure_type,
 )
@@ -450,4 +451,9 @@ __all__ = [
     "TypeParam",
     "TypeParameters",
     "TypeAlias",
+    # Spanish statements
+    "Aumenta",
+    "Continúa",
+    "Devuelve",
+    "Rompe",
 ]

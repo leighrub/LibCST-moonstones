@@ -38,21 +38,21 @@ def _parse(
     detect_trailing_newline: bool,
     detect_default_newline: bool,
 ) -> CSTNode:
-    if is_native():
-        from libcst.native import parse_expression, parse_module, parse_statement
+    # if is_native():
+    #     from libcst.native import parse_expression, parse_module, parse_statement
 
-        encoding, source_str = convert_to_utf8(source, partial=config)
+    #     encoding, source_str = convert_to_utf8(source, partial=config)
 
-        if entrypoint == "file_input":
-            parse = partial(parse_module, encoding=encoding)
-        elif entrypoint == "stmt_input":
-            parse = parse_statement
-        elif entrypoint == "expression_input":
-            parse = parse_expression
-        else:
-            raise ValueError(f"Unknown parser entry point: {entrypoint}")
+    #     if entrypoint == "file_input":
+    #         parse = partial(parse_module, encoding=encoding)
+    #     elif entrypoint == "stmt_input":
+    #         parse = parse_statement
+    #     elif entrypoint == "expression_input":
+    #         parse = parse_expression
+    #     else:
+    #         raise ValueError(f"Unknown parser entry point: {entrypoint}")
 
-        return parse(source_str)
+    #     return parse(source_str)
     return _pure_python_parse(
         entrypoint,
         source,
